@@ -13,8 +13,8 @@ Which ultimately led to engineering an encoder and decoder dual set.  Why I set 
 in a manner of my choosing, not anyone else's decesion to decide when I can or how I can have private expressions of speech.
 Whether that be an actor state foreign or domestic, cannot and should not have an authority that grants them a way to circumvent the 4th, 5th, or 1st amendments of the U.S. constitution.
 
-Therefore I have over the course of 3 years developed and slowly making some of those ideas and technologies publically avaiable in hopes they will be morphed, used, and ultimately
-made better to promote freedom of speech while maintaining a peace of mind that the speech that you make are logarithmically hard to decipher unless read by the intended audience and
+Therefore I have over the course of 3 years developed and slowly making some of those ideas and technologies publicly avaiable in hopes they will be morphed, used, and ultimately
+made better to promote freedom of speech while maintaining a peace of mind that the speech that you create, express, and/or produce are logarithmically hard to decipher unless read by the intended audience and
 receipient.
 
 ### Encoder
