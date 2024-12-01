@@ -1,0 +1,17 @@
+FROM ubuntu:focal AS dev_vm
+
+EXPOSE 443
+EXPOSE 80
+EXPOSE 8501
+
+
+RUN apt update
+RUN apt-get update
+
+RUN apt-get install -y python3
+RUN apt-get install -y python3-pip
+
+RUN python3 -m pip install tensorflow
+RUN python3 -m pip install pyqt5
+
+

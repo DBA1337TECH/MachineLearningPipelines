@@ -1,0 +1,5 @@
+sudo docker run -itd --rm -p 127.0.0.1:8501:8501/tcp -v "/home/$(whoami)/tensorflow_serving/tensorflow_serving/servables/tensorflow/testdata/saved_model_half_plus_two_cpu:/models/half_plus_two" \
+--env MODEL_NAME="half_plus_two" \
+--env MODEL_BASE_PATH="/models" \
+--name=inference_pipeline tensorflow/serving:latest-devel
+
