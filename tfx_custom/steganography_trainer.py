@@ -1,4 +1,5 @@
 from tfx.components.trainer.fn_args_utils import FnArgs
+from rnn_steganography_mixer import *
 
 def run_fn(fn_args: FnArgs):
     # Define shapes
