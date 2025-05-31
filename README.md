@@ -1,3 +1,135 @@
+# system_of_machine_learning
+
+A self-contained machine learning inference system using Airflow, TensorFlow Serving, and a Gradio-powered Web UI to train and serve a KNN model on binary feature data (e.g., from Ghidra reverse engineering exports).
+
+---
+
+## Project Layout
+
+```
+.
+├── airflow/               # DAGs and Airflow configs
+├── data/                  # Input data (JSON or .json.gz feature files)
+├── docker-compose.yml     # Multi-container orchestration
+├── Dockerfile             # Custom build context
+├── models/                # Exported ML models
+├── scripts/               # Custom utility scripts
+├── webui/                 # Gradio Web UI interface
+└── README.md              # This file!
+```
+
+---
+
+## Quickstart
+
+### 1. Build the Containers
+
+```bash
+docker-compose build
+```
+
+### 2. Start the Full Stack
+
+```bash
+docker-compose up -d
+```
+
+This launches:
+- `airflow_training` – Runs your Airflow DAG that trains the KNN model.
+- `tf_inference` – TensorFlow Serving exposing the model on port `8501`.
+- `tf_web_ui` – Gradio-based Web UI on port `7860`.
+
+### 3. Access the Interfaces
+
+- **Airflow Web UI** → [http://localhost:8080](http://localhost:8080)
+- **Gradio Web UI** → [http://localhost:7860](http://localhost:7860)
+- **TensorFlow Serving** → [http://localhost:8501/v1/models/my_knn_model](http://localhost:8501/v1/models/my_knn_model)
+
+---
+
+## Useful Commands
+
+### View Airflow Logs
+
+```bash
+docker-compose logs -f airflow_training
+```
+
+### Trigger DAG Manually
+
+```bash
+docker exec -it airflow_training airflow dags trigger train_knn_model
+```
+
+### Check Import Errors
+
+```bash
+docker exec -it airflow_training airflow dags list-import-errors
+```
+
+### Test TensorFlow Serving via cURL
+
+```bash
+curl http://localhost:8501/v1/models/my_knn_model
+```
+
+### Send a Prediction Request
+
+```bash
+curl -X POST http://localhost:8501/v1/models/my_knn_model:predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "instances": [[10, 5, 120, 40]]
+  }'
+```
+
+---
+
+## Tear It Down
+
+```bash
+docker-compose down -v --remove-orphans
+```
+
+---
+
+## 🗺️ System Architecture
+
+![System Pipeline](diagram_pipeline.png)
+
+This diagram shows the flow between data, training, model export, inference, and the web UI.
+
+---
+
+## 🧠 Features
+
+- Airflow DAG to process `.json.gz` or `.json` feature vectors and train a scikit-learn KNN model.
+- TensorFlow wrapper exports it in `SavedModel` format.
+- TensorFlow Serving exposes inference API.
+- Gradio Web UI for manual input testing.
+
+---
+
+## 🏁 Tip
+
+Before running the DAG, make sure your `data/` folder contains `.json` or `.json.gz` feature vectors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Machine Learning Aided Steganography
 The goal of this project was more of generalizing on a modest dataset, and availble publicly, the use of audio to hide data within WAV files.
 
