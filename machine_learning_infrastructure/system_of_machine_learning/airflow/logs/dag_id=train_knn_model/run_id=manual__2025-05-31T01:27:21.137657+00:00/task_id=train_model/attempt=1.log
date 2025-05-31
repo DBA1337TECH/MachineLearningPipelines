@@ -1,0 +1,17 @@
+{"timestamp":"2025-05-31T01:27:21.526256","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-05-31T01:27:21.526654","level":"info","event":"Filling up the DagBag from /home/airflow/dags/custom_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-05-31T01:27:21.932188Z","level":"error","event":"2025-05-31 01:27:21.932111: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-31T01:27:21.952406Z","level":"error","event":"2025-05-31 01:27:21.952253: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-31T01:27:21.952501Z","level":"error","event":"To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-31T01:27:22.533432Z","level":"error","event":"2025-05-31 01:27:22.533353: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-31T01:27:22.648048Z","level":"info","event":"Task instance is in running state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-31T01:27:22.648111Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-31T01:27:22.648132Z","level":"info","event":"Current task name:train_model","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-31T01:27:22.648149Z","level":"info","event":"Dag name:train_knn_model","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-31T01:27:23.061328Z","level":"info","event":"[+] Loaded 1 samples","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-31T01:27:23.235514","level":"info","event":"Assets written to: /models/my_knn_model/assets","logger":"tensorflow"}
+{"timestamp":"2025-05-31T01:27:23.235985Z","level":"info","event":"[+] Saved KNN model to: /models/my_knn_model/","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-31T01:27:23.236024","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator"}
+{"timestamp":"2025-05-31T01:27:23.280883Z","level":"info","event":"Task instance in success state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-31T01:27:23.280959Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-31T01:27:23.280987Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): train_model>","chan":"stdout","logger":"task"}
